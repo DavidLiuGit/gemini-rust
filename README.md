@@ -5,15 +5,16 @@ A Rust client for the Gemini Exchange REST API
 see https://docs.gemini.com/rest-api/
 
 # Usage
+```rust
+let url = "https://api.sandbox.gemini.com";
+let api_key = "<your api key>"
+let api_secret = "<your api secret>";
+let client = GeminiClient::new(&url, &api_key, &api_sec);
 
-    let url = "https://api.sandbox.gemini.com";
-    let api_key = "<your api key>"
-    let api_secret = "<your api secret>";
-    let client = GeminiClient::new(&url, &api_key, &api_sec);
-    
-    let symbols = client.symbols().expect("error with request");
-    assert!(symbols.len() > 0, "symbols vector should be > 0 size");
-    println!("{:?}", symbols)
+let symbols = client.symbols().expect("error with request");
+assert!(symbols.len() > 0, "symbols vector should be > 0 size");
+println!("{:?}", symbols)
+```
 
 # Tests
 

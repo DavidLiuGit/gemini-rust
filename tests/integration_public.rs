@@ -1,4 +1,4 @@
-use geminent::{GeminiClient, PublicAPI};
+use gemini_rust::{GeminiClient, PublicAPI};
 
 static BTCUSD: &str = "btcusd";
 

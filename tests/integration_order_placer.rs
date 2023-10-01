@@ -1,4 +1,4 @@
-use geminent::{GeminiClient, OrderPlacerAPI};
+use gemini_rust::{GeminiClient, OrderPlacerAPI};
 mod cfg;
 use cfg::Cfg;
 

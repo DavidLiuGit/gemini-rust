@@ -6,8 +6,8 @@ use ureq::{Request, Response};
 
 pub fn try_deserialize<T: de::DeserializeOwned>(resp: Response) -> Option<T> {
     if resp.ok() {
-        //let j = resp.into_string();
-        //println!("resp: {:?}", j);
+        // let j = resp.into_string();
+        // println!("resp: {:?}", j);
         Some(resp.into_json_deserialize::<T>().unwrap())
     } else {
         println!("error {}: {}", resp.status(), resp.into_string().unwrap());
@@ -18,7 +18,7 @@ pub fn try_deserialize<T: de::DeserializeOwned>(resp: Response) -> Option<T> {
 pub fn get_nonce() -> u64 {
     let start = SystemTime::now();
     let since_the_epoch = start.duration_since(UNIX_EPOCH).expect("time physics");
-    since_the_epoch.as_millis() as u64
+    since_the_epoch.as_micros() as u64
 }
 
 pub fn post_payload<T: de::DeserializeOwned>(

@@ -1,14 +1,15 @@
 use crate::utils;
 use crate::GeminiClient;
 use serde::Deserialize;
+use rust_decimal::prelude::*;
 
 #[derive(Deserialize, Debug)]
 pub struct SymbolDetail {
     pub symbol: String,
     pub base_currency: String,
     pub quote_currency: String,
-    pub tick_size: u8,
-    pub quote_increment: u8,
+    pub tick_size: Decimal,
+    pub quote_increment: Decimal,
     pub min_order_size: String,
     pub status: String,
 }
